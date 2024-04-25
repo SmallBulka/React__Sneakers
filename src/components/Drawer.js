@@ -1,41 +1,37 @@
-function Drawer() {
+function Drawer({onClose, items = [], onRemove}) {
     return(
-        <div className="overlay">
+        <div className="overlay" >
       
-    <div className="drawer">
+    <div className="drawer" >
     <h2>
-      Корзина{" "}
-      <img className="removBtn" src="/img/btn-remov.svg" alt="Remov" />
+      Корзина 
+      <img onClick={onClose} className="removBtn" src="/img/btn-remov.svg" alt="Remov" />
     </h2>
-    <div className="items">
-      <div className="cartItem">
-        <img
-          width={70}
-          height={70}
-          src="/img/sneak/1.jpg"
-          alt="Sneakers"
-        />
-        <div>
-          <p>Мужские Кроссовки Nike Air Max 270</p>
-          <b>12 999 руб.</b>
-        </div>
-        <img className="removBtn" src="/img/btn-remov.svg" alt="Remov" />
-      </div>
+    
+      
 
-      <div className="cartItem">
-        <img
+    <div className="items">
+        {
+          items.map((obj) => (
+            
+              <div className="cartItem">
+            <img
           width={70}
           height={70}
-          src="/img/sneak/1.jpg"
-          alt="Sneakers"
-        />
-        <div>
-          <p>Мужские Кроссовки Nike Air Max 270</p>
-          <b>12 999 руб.</b>
-        </div>
-        <img className="removBtn" src="/img/btn-remov.svg" alt="Remov" />
+          src={obj.imageUrl}
+          alt="Sneakers"/>
+          <div>
+          <p>{obj.title}</p>
+          <b>{obj.price} руб.</b>
+          </div>
+        <img  onClick={() => onRemove(obj.id)} className="removBtn" src="/img/btn-remov.svg" alt="Remov" />
       </div>
-    </div>
+      
+          ))
+        }
+      </div>
+      
+    
     <div className="cartTotalBlock">
       <ul>
         <li>
