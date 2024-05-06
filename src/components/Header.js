@@ -1,4 +1,7 @@
+<<<<<<< fin
 import { Link } from "react-router-dom";
+=======
+>>>>>>> main
 function Header(props) {
     return (
       <header>
