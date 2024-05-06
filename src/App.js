@@ -36,9 +36,9 @@ function App() {
       axios.get('https://662213ce27fcd16fa6c8ad3e.mockapi.io/cart').then((res) => {
         setCartItems(res.data);
       });
-      axios.get('https://663883814253a866a24e0be6.mockapi.io/favorites').then((res) => {
-      setCartItems(res.data);
-      });
+      // axios.get('https://663883814253a866a24e0be6.mockapi.io/favorites').then((res) => {
+      // setCartItems(res.data);
+      // });
   }, []);
 
   const onRemoveItem = (id) => {
