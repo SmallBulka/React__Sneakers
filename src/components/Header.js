@@ -3,7 +3,7 @@ function Header(props) {
     return (
       <header>
         <div className="header__left">
-          
+
         <Link link to="/">
           <img src="/img/logo.svg" />
         </Link>
