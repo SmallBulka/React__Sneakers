@@ -1,4 +1,23 @@
+import React from 'react';
+import axios from 'axios';
+import Info from './Info';
+import AppContext from '../contex';
 function Drawer({onClose, items = [], onRemove}) {
+  const {cartItems, setCartItems} = React.useContext(AppContext);
+  const [isCoplete, setIsCoplete] = React.useState(false);
+  const [orderId, setOrderId] = React.useState(null);
+
+  const onClickCoplete = async () =>{
+    try{
+      const{data} = await axios.get('https://663883814253a866a24e0be6.mockapi.io/favorites', cartItems) // передаю весь массив того что есть в корзине
+      setOrderId(data.id);
+      setIsCoplete(true);// паралельно делаю что заказ создан 
+      setCartItems([]);//очещаю массив корзины
+  }catch (error){
+    alert('Не удалось создать заказ');
+  }
+}
+    
     return (
       <div className="overlay">
         <div className="drawer">
@@ -15,7 +34,7 @@ function Drawer({onClose, items = [], onRemove}) {
           <div>
             <div className="items">
               {items.map((obj) => (
-                <div className="cartItem">
+                <div key={obj.id} className="cartItem">
                   <img
                     width={70}
                     height={70}
@@ -48,23 +67,18 @@ function Drawer({onClose, items = [], onRemove}) {
                 <b>1074 руб. </b>
               </li>
             </ul>
-            <button className="greenBtn">
+            <button onClick={onClickCoplete}  className="greenBtn">
               Оформить заказ <img src="/img/str.svg" alt="Arrow" />
             </button>
           </div>
           </div>
           ) : (
-            <div className="close">
-              <img width="300px" height="300px" src="img/close.png" />
-              <h2>В корзине ничего нет</h2>
-              <p>
-                Выберите товары или войдите в аккаунт, если добавляли товары в
-                корзину
-              </p>
-              <button onClick={onClose} className="greenBtn">
-                <img src="/img/str.svg" alt="Arrow" /> Вернуться к покупкам
-              </button>
-            </div>
+            <Info 
+            title={isCoplete ? "Заказ оформлен!" : "В корзине ничего нет" }
+            description={isCoplete ? `Ваш заказ #${orderId} скоро будет передан курьерской доставке` : 
+            "Выберите товары или войдите в аккаунт, если добавляли товары в корзину"}
+            image={isCoplete ? "/img/ofor.svg" : "/img/str.svg"}/>
+            
           )}
           {/* усли есть хоть что то рендари items ЕСЛИ нет то рендари close */}
           
