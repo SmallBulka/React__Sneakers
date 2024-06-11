@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/React__Sneakers.github.io/static/css/main.e673fbe3.css",
+    "main.js": "/React__Sneakers.github.io/static/js/main.35146ba7.js",
+    "static/js/453.36a265ce.chunk.js": "/React__Sneakers.github.io/static/js/453.36a265ce.chunk.js",
+    "static/media/jpg": "/React__Sneakers.github.io/static/media/e564a34116b7642bcaa8aa15189db948.14469420cc8d022117b5.jpg",
+    "static/media/OyP5w27V1mo.jpg": "/React__Sneakers.github.io/static/media/OyP5w27V1mo.6346576f49014e9fb3ce.jpg",
+    "static/media/puma_banner_1.jpeg": "/React__Sneakers.github.io/static/media/puma_banner_1.d0fd0e09ea08ece141f8.jpeg",
+    "index.html": "/React__Sneakers.github.io/index.html",
+    "main.e673fbe3.css.map": "/React__Sneakers.github.io/static/css/main.e673fbe3.css.map",
+    "main.35146ba7.js.map": "/React__Sneakers.github.io/static/js/main.35146ba7.js.map",
+    "453.36a265ce.chunk.js.map": "/React__Sneakers.github.io/static/js/453.36a265ce.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e673fbe3.css",
+    "static/js/main.35146ba7.js"
+  ]
+}
