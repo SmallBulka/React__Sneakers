@@ -1,0 +1,31 @@
+.main-container {
+  width: 960px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  
+  margin-left: 30px;
+  margin-bottom: 39px;
+}
+
+.window {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.all-pages-container {
+  height: 100%;
+  display: flex;
+  transition: translate;
+  transition-property: transform;
+  /* transition-duration: 300ms; */
+  transition-timing-function: ease-in-out;
+}
+
+.arrow {
+  cursor: pointer;
+  
+}

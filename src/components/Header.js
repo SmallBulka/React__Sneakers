@@ -1,37 +1,49 @@
+import React from "react";
 import { Link } from "react-router-dom";
+import { useCart } from '../hooks/useCart';
+
+
+
 function Header(props) {
+  
+  const { totalPrice } = useCart();
+  
     return (
+      
       <header>
         <div className="header__left">
 
         <Link link to="/">
-          <img src="/img/logo.svg" />
+          <img width={52} height={52} src="/img/logo.svg" />
         </Link>
           <div>
-            <h3>React sneakers</h3>
-            <p>Магазин лучших кроссовок</p>
+            <h3>Street Beat</h3>
+            <p>Sneakers as unique as you.</p>
           </div>
         </div>
-
+        
         <div>
           <ul className="header__right">
             <li onClick={props.onClickCart}>
-              <img width={18} height={18} src="/img/Group.svg" />
-              <span>1205</span>
+              <img width={21} height={24} src="/img/Group.svg" />
+              <span>{totalPrice} ₽</span>
             </li>
             <li>
               <Link to="/favorites">
-                <img width={18} height={18} src="/img/zakladki.svg" />
-                <span>Закладки</span>
+                <img width={21} height={24} src="/img/zakladki.svg" />
+                
               </Link>
+              
             </li>
             <li>
-              <img width={18} height={18} src="/img/Union.svg" />
-              <span>Профиль</span>
+            <Link to="/orders">
+              <img width={21} height={24} src="/img/Union.svg" />
+              </Link>
             </li>
           </ul>
         </div>
       </header>
     );
+    
 }
 export default  Header;

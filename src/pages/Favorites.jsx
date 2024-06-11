@@ -2,7 +2,7 @@
 import React from 'react'
 import Card from "../components/Card";
 
-import AppContext from "../contex";
+import AppContext from "../context";
 
 
 function Favorites() {

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   margin: 0;
   background-color: #E7F6FF;
@@ -23,7 +24,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 40px;
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 2px solid #eaeaea;
 }
 
 .header__left {
@@ -53,6 +54,7 @@ header {
 }
 .header__right img {
   margin-right: 10px;
+  vertical-align: middle;
 }
 .header__right ul {
   margin: 0;
@@ -94,14 +96,6 @@ header {
   padding: 0 15px;
   position: relative;
 }
-.seach-block .removBtn {
-  position: absolute;
-  right: 0;
-  width: 12px;
-  height: 12px;
-  top: 16px;
-  right: 15px;
-}
 .seach-block input {
   border: 0;
   padding: 13px;
@@ -131,25 +125,20 @@ header {
   box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
   padding: 30px;
 }
-.drawer h2 {
-  display: flex;
-  justify-content: space-between;
-  margin: 0;
-  padding-bottom: 30px;
-}
-.drawer img {
-  cursor: pointer;
-}
 
 .items {
-  flex: 1;
+  display: flex;
+  flex-direction: column;
   overflow: auto;
   margin-bottom: 40px;
 }
 
+.cartTotalBlock {
+  display: flex;
+  flex-direction: column;
+}
 .cartTotalBlock ul {
   padding: 0;
-  margin-bottom: 40px;
 }
 .cartTotalBlock div {
   flex: 1;
@@ -248,6 +237,10 @@ header {
   cursor: pointer;
   transition: background 0.1s ease-in-out;
 }
+.close .greenBtn:disabled {
+  background-color: #bebebe;
+  cursor: default;
+}
 .close .greenBtn:hover {
   background: #a9d96c;
 }
@@ -263,4 +256,100 @@ header {
   transform: rotate(180deg) translateX(3px);
   top: 22px;
   transition: transform 0.15s ease-in-out;
+}
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+}
+@media (max-width: 768px) {
+  .products-preview .preview img {
+    height: 25rem;
+  }
+}
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}
+select {
+  background-size: cover;
+  border: 1px solid #eaeaea;
+  height: 32px;
+  width: 40px;
+  font-size: 13px;
+  border-radius: 10px;
+  color: #bebebe;
+}
+
+/* Контейнер <div> - необходим для размещения выпадающего содержимого */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Выпадающее содержимое (скрыто по умолчанию) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Ссылки внутри выпадающего списка */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Изменение цвета выпадающих ссылок при наведении курсора */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Показать выпадающее меню при наведении курсора */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Изменение цвета фона кнопки раскрывающегося списка при отображении содержимого раскрывающегося списка */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+.app__main-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-1 {
+  background-image: url("../public/img/puma_banner_1.jpeg");
+  background-size: 929px 300px;
+}
+
+.item-2 {
+  background-image: url("../public/img/e564a34116b7642bcaa8aa15189db948.jpg");
+  background-size: 929px 300px;
+}
+
+.item-3 {
+  background-image: url("../public/img/OyP5w27V1mo.jpg");
+  background-size: 929px 300px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
 }/*# sourceMappingURL=index.css.map */

@@ -1,6 +1,6 @@
 body{
     margin: 0;
-
+    
     background-color:#E7F6FF;
     
 }
@@ -27,7 +27,7 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 40px;
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 2px solid #eaeaea;
 }
 .header__left {
     display: flex;
@@ -67,20 +67,25 @@ header{
 
     img {
         margin-right: 10px;
+        vertical-align: middle;
     }
     ul {
         margin: 0;
         padding: 0;
+        
     }
     li {
         list-style-type: none;
         margin-right: 30px;
         cursor: pointer;
+        
     }
     span {
         color: #5C5C5C;
-    
+        
     }
+    
+    
 }
 
 
@@ -122,16 +127,16 @@ header{
     padding: 0 15px;
     position: relative;
 
-    .removBtn{
-        position: absolute;
-        right: 0;
-        width: 12px;
-        height: 12px;
-        top: 16px;
-        right: 15px;
+    // .removBtn{
+    //     position: absolute;
+    //     right: 0;
+    //     width: 12px;
+    //     height: 12px;
+    //     top: 16px;
+    //     right: 15px;
         
 
-    }
+    // }
 
     input{
         border: 0;
@@ -164,32 +169,33 @@ header{
     
     
 
-    h2{
+    // h2{
+    //     display: flex;
+    //     justify-content: space-between;
+    //     margin: 0;
+    //     padding-bottom: 30px;
+    // }
+    // img{
+    //     cursor: pointer;
+    // }
+}
+.items {
         display: flex;
-        justify-content: space-between;
-        margin: 0;
-        padding-bottom: 30px;
+        flex-direction: column;
+      overflow: auto;
+      margin-bottom: 40px;
     }
-    img{
-        cursor: pointer;
-    }
-}
-.items{
-    flex: 1;
-    overflow: auto;
-    margin-bottom: 40px;
-
-    
-}
-    
 
 
 .cartTotalBlock{
-    
+    display: flex;
+    flex-direction: column;
     ul{
         
         padding: 0;
-        margin-bottom: 40px;
+        
+       
+        
     }
     div{
         flex: 1;
@@ -217,6 +223,7 @@ header{
         font-weight: 500;
         cursor: pointer;
         transition: background 0.1s ease-in-out;
+        
     
         &:hover {
             background: lighten(#9DD458, 5%);
@@ -312,6 +319,11 @@ header{
         font-weight: 500;
         cursor: pointer;
         transition: background 0.1s ease-in-out;
+
+        &:disabled{
+            background-color: #bebebe;
+            cursor: default;
+        }
     
         &:hover {
             background: lighten(#9DD458, 5%);
@@ -335,7 +347,222 @@ header{
         }
     }
 }
+// .preview{
+// color: brown;
+// position: absolute;
+// }
 
 
 
+// .products-preview{
+//     position: fixed;
+//     top:0; left:0;
+//     min-height: 100vh;
+//     width: 100%;
+//     background: rgba(0,0,0,.8);
+//     display: none;
+//     align-items: center;
+//     justify-content: center;
+//  }
+ 
+//  .products-preview .preview{
+//     display: none;
+//     padding:2rem;
+//     text-align: center;
+//     background: #fff;
+//     position: relative;
+//     margin:2rem;
+//     width: 40rem;
+//  }
+ 
+//  .products-preview .preview.active{
+//     display: inline-block;
+//  }
+ 
+//  .products-preview .preview img{
+//     height: 30rem;
+//  }
+ 
+//  .products-preview .preview .fa-times{
+//     position: absolute;
+//     top:1rem; right:1.5rem;
+//     cursor: pointer;
+//     color:#444;
+//     font-size: 4rem;
+//  }
+ 
+//  .products-preview .preview .fa-times:hover{
+//     transform: rotate(90deg);
+//  }
+ 
+//  .products-preview .preview h3{
+//     color:#444;
+//     padding:.5rem 0;
+//     font-size: 2.5rem;
+//  }
+ 
+//  .products-preview .preview .stars{
+//     padding:1rem 0;
+//     font-size: 1.7rem;
+//  }
+ 
+//  .products-preview .preview .stars i{
+//     color:#27ae60;
+//  }
+ 
+//  .products-preview .preview .stars span{
+//     color:#999;
+//  }
+ 
+//  .products-preview .preview p{
+//     line-height: 1.5;
+//     padding:1rem 0;
+//     font-size: 1.6rem;
+//     color:#777;
+//  }
+ 
+//  .products-preview .preview .price{
+//     padding:1rem 0;
+//     font-size: 2.5rem;
+//     color:#27ae60;
+//  }
+ 
+//  .products-preview .preview .buttons{
+//     display: flex;
+//     gap:1.5rem;
+//     flex-wrap: wrap;
+//     margin-top: 1rem;
+//  }
+ 
+//  .products-preview .preview .buttons a{
+//     flex:1 1 16rem;
+//     padding:1rem;
+//     font-size: 1.8rem;
+//     color:#444;
+//     border:.1rem solid #444;
+//  }
+ 
+//  .products-preview .preview .buttons a.cart{
+//     background: #444;
+//     color:#fff;
+//  }
+ 
+//  .products-preview .preview .buttons a.cart:hover{
+//     background: #111;
+//  }
+ 
+//  .products-preview .preview .buttons a.buy:hover{
+//     background: #444;
+//     color:#fff;
+//  }
+ @media (max-width:991px){
 
+    html{
+       font-size: 55%;
+    }
+ 
+ }
+ 
+ @media (max-width:768px){
+ 
+    .products-preview .preview img{
+       height: 25rem;
+    }
+ 
+ }
+ 
+ @media (max-width:450px){
+ 
+    html{
+       font-size: 50%;
+    }
+ 
+ }
+
+ select{
+    
+    background-size: cover;
+    border: 1px solid #eaeaea;
+    height: 32px;
+    width: 40px;
+    font-size: 13px;
+    border-radius: 10px;
+    color: #bebebe;
+    
+ }
+
+
+
+  
+  /* Контейнер <div> - необходим для размещения выпадающего содержимого */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Выпадающее содержимое (скрыто по умолчанию) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Ссылки внутри выпадающего списка */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Изменение цвета выпадающих ссылок при наведении курсора */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Показать выпадающее меню при наведении курсора */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Изменение цвета фона кнопки раскрывающегося списка при отображении содержимого раскрывающегося списка */
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+ 
+  .app__main-container {
+    display: flex;
+    flex-direction: column;
+    
+    
+  }
+  .app__main-container > *:not(:last-child) {
+    
+  }
+  
+  .item-1 {
+    background-image: url('../public/img/puma_banner_1.jpeg') ;
+    background-size:929px 300px;
+    
+  }
+  .item-2 {
+    background-image: url('../public/img/e564a34116b7642bcaa8aa15189db948.jpg');
+    background-size:929px 300px;
+  }
+  .item-3 {
+    background-image: url('../public/img/OyP5w27V1mo.jpg');
+    background-size:929px 300px;
+  }
+  
+  .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    
+    
+  }
+  
+  

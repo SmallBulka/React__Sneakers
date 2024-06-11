@@ -1,8 +1,10 @@
 import React from 'react'
-import AppContext from '../contex';
+import AppContext from '../context';
+
 
 const Info = ({image, title, description}) => {
     const {setCartOpened} = React.useContext(AppContext);
+    
   return (
     <div>
         <div className="close">
