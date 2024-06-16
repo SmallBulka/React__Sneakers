@@ -1,6 +1,6 @@
 # STREET BEAT
 
-Sneakers as unique as you.[Demo](https://street-beat.netlify.app/).
+Sneakers as unique as you. E-commerce website[Demo](https://street-beat.netlify.app/).
 
 ## Tech Stack
 
