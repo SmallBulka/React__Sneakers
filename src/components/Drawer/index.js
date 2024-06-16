@@ -8,35 +8,35 @@ import Info from '../Info';
 import { useCart } from '../../hooks/useCart';
 import styles from './Drawer.module.css';
 
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+// const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 function Drawer({onClose, items = [], onRemove, opened}) {
-  const {cartItems, setCartItems} = useCart();
-  const [isOrderComplete, setIsOrderComplete] = React.useState(false);
-  const [orderId, setOrderId] = React.useState(null);
-  const [isLoading, setIsLoading] = React.useState(true);
+  const {cartItems} = useCart();
+  const [isOrderComplete] = React.useState(false);
+  const [orderId] = React.useState(null);
+  // const [isLoading, setIsLoading] = React.useState(true);
   const totalPrice = cartItems.reduce((sum, obj) => obj.price + sum, 0);
 
-  const onClickOrder = async () =>{
-    try {
-      setIsLoading(true);
-      const { data } = await axios.post('/orders', {
-        items: cartItems,
-      });
-      setOrderId(data.id);
-      setIsOrderComplete(true);
-      setCartItems([]);
-
-      for (let i = 0; i < cartItems.length; i++) {
-        const item = cartItems[i];
-        await axios.delete('/cart/' + item.id);
-        await delay(1000);
-      }
-    } catch (error) {
-      alert('Ошибка при создании заказа :(');
-    }
-    setIsLoading(false);
-  };
+  // const onClickOrder = async () =>{
+  //   try {
+  //     setIsLoading(true);
+  //     const { data } = await axios.post('/orders', {
+  //       items: cartItems,
+  //     });
+  //     setOrderId(data.id);
+  //     setIsOrderComplete(true);
+  //     setCartItems([]);
+  //
+  //     for (let i = 0; i < cartItems.length; i++) {
+  //       const item = cartItems[i];
+  //       await axios.delete('/cart/' + item.id);
+  //       await delay(1000);
+  //     }
+  //   } catch (error) {
+  //     alert('Ошибка при создании заказа :(');
+  //   }
+  //   setIsLoading(false);
+  // };
     
 
     return (

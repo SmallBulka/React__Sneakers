@@ -11,7 +11,7 @@ import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
 import "./App.css";
 import Orders from './pages/Orders';
-import Info from './components/Info';
+// import Info from './components/Info';
 
 
 // import Scsrt from './components/MainSlider'
@@ -27,8 +27,8 @@ function App() {
   const [seachValue, setSeachValue] = React.useState('');
   const [cartOpened, setCartOpened] = React.useState(false);
   const [isLoading, setisLoading] = React.useState(true);
-  const [isOrderComplete, setIsOrderComplete] = React.useState(false);
-  const [orderId, setOrderId] = React.useState(null);
+  // const [isOrderComplete, setIsOrderComplete] = React.useState(false);
+  // const [orderId, setOrderId] = React.useState(null);
   
   React.useEffect(() => {
     async function fetchData() {

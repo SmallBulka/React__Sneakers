@@ -1,7 +1,7 @@
 import React from "react";
 import ContentLoader from "react-content-loader";
 import styles from "./Card.module.css";
-import AppContext from '../../context';
+// import AppContext from '../../context';
 // import Modal from '../../Modal/Modal';
 
 
@@ -16,7 +16,7 @@ function Card({
   loading = false,
 }) {
   const [isAdded, setIsAdded] = React.useState(false);
-  const { isItemAdded } = React.useContext(AppContext);
+  // const { isItemAdded } = React.useContext(AppContext);
   
   const obj = { id, parentId: id, title, imageUrl, price };
   const [isFavorite, setIsFavorite] = React.useState(favorited);

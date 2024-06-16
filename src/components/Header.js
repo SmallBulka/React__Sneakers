@@ -14,7 +14,7 @@ function Header(props) {
         <div className="header__left">
 
         <Link link to="/">
-          <img width={52} height={52} src="/img/logo.svg" />
+          <img width={52} height={52} src="/img/logo.svg" alt='logo'/>
         </Link>
           <div>
             <h3>Street Beat</h3>
@@ -25,19 +25,19 @@ function Header(props) {
         <div>
           <ul className="header__right">
             <li onClick={props.onClickCart}>
-              <img width={21} height={24} src="/img/Group.svg" />
+              <img width={21} height={24} src="/img/Group.svg" alt='Group'/>
               <span>{totalPrice} ₽</span>
             </li>
             <li>
               <Link to="/favorites">
-                <img width={21} height={24} src="/img/zakladki.svg" />
+                <img width={21} height={24} src="/img/zakladki.svg" alt='zakladki'/>
                 
               </Link>
               
             </li>
             <li>
             <Link to="/orders">
-              <img width={21} height={24} src="/img/Union.svg" />
+              <img width={21} height={24} src="/img/Union.svg" alt='Union'/>
               </Link>
             </li>
           </ul>
